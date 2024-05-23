@@ -1,0 +1,27 @@
+<div class="container-fluid">
+
+
+<div class="box shadow">
+
+<h1 class="text-center fw-bold mt-4">Forget Password</h1>
+
+<div class="ps-4 pe-4">
+<p>Enter your email and we will send you instructions on how to reset your password</p>
+<form [formGroup]="forgotForm">
+    <input type="email" class="form-control mt-4" 
+    placeholder="enter your email" formControlName="email" >
+    <div *ngIf="this.forgotForm.get('email')?.errors && this.forgotForm.get('email')?.touched" class="text-danger fw-bold mt-1">Invalid email</div>
+
+<div class="mt-3 ">
+    <button  type="button" class="btn btn-primary" (click)="submit()" >Submit</button>
+    <button  type="button" class="btn btn-secondary ms-2">Cancel</button>
+</div>
+</form>
+</div>
+
+
+
+</div>
+
+
+</div>

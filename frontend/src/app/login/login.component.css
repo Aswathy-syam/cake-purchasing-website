@@ -1,0 +1,33 @@
+.container-fluid{
+    background-color: antiquewhite;
+height: 100vh;
+position: relative;
+}
+
+.box{
+
+    position: absolute;
+    width: 30%;
+    background-color:rgb(103, 13, 13);
+    height: 85%;
+    margin-top: 5%;
+    margin-left: 35%;
+    border-radius: 25px;
+  
+} 
+form{
+    position: absolute;
+    width: 85%;
+    background-color: white;
+    height: 75%;
+    margin-top: 2%;
+    margin-left: 8%;
+    padding: 15px;
+
+border-radius: 25px;
+}
+/* .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */

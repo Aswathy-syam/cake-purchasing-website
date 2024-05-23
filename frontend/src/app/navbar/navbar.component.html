@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+       
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <ul class="navbar-nav  fs-bold ">
+        <li class="nav-item ">
+          <div class="d-flex me-3">
+            <i class="fa-solid fa-face-smile me-1 mt-1"></i>
+            <h5 class="fw-bolder">1 Million Happy Customers</h5>
+        </div>
+        </li>
+      </ul>
+
+
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav m-auto fs-bold">
+          <li class="nav-item ">
+            <a class="nav-link active fs-6" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-6" aria-current="page" href="#">About</a>
+          </li>
+          <a class="navbar-brand fw-bold fw-3 fs-4" href="#"><em >CREAMIO</em></a>
+          <li class="nav-item">
+            <a class="nav-link active fs-6" aria-current="page" href="#">Premises</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-6" aria-current="page" href="#">Contacts</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link active fs-6 " aria-current="page" href="#">Premises</a>
+          </li> -->
+        </ul>
+
+      </div>
+
+      <!-- <div class="collapse navbar-collapse " id="navbarNav"> -->
+        <ul class="navbar-nav  fs-bold ">
+          <li class="nav-item ">
+            <a routerLink="/user/login" class="text-dark me-2"><i class="fa-solid fa-user">LogOut</i></a>
+            <button class="me-3"  style="border: none;" routerLink="/user/wish">
+            <i class="fa-solid fa-heart fs-5 "></i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{wishItem}}</div>
+            </button>
+            <button  routerLink="/user/card" style="border: none;">
+            <i class="fa-solid fa-cart-shopping fs-5" ></i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+          </button>
+          </li>
+        </ul>
+      <!-- </div> -->
+
+
+
+
+    </div>
+  </nav>
+
+ 

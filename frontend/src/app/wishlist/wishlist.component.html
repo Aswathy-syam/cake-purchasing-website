@@ -1,0 +1,44 @@
+<p>wishlist works!</p>
+<app-navbar></app-navbar>
+
+<!--  -->
+
+<ng-container *ngIf="wishlist.length !=0" >
+  <i routerLink="/user/items" class="fa-solid fa-arrow-left mt-5  fs-1 ms-5 ps-5 btn" ></i>
+  <div class="row align-items-start ms-5 ps-5">
+    <div class="col-4" *ngFor="let item of wishlist">
+      
+        <div class="card " style="width: 18rem; margin-top: 35%;">
+            <div class="d-flex align-items-start justify-content-start">
+            <img [src]="item.image" class="card-img-top" alt="..."style="height: 230px;">
+            <i class="fa-solid fa-xmark btn fs-4 text-danger"  (click)="removeFromWishlist(item)"></i>
+        </div>
+            <div class="card-body">
+              <p class="card-text fw-bold">{{item.productName}}</p> 
+              <p class="card-text fw-bold">{{item.price}}</p>
+
+            </div>
+          </div>
+
+    </div>
+  </div>
+
+
+
+</ng-container>
+
+
+
+<!-- cart 0 -->
+
+<ng-container *ngIf="wishlist.length==0">
+<div class="card text-center w-75 shadow" style="margin-top: 10%; margin-left: 12%;">
+    
+    <div class="card-body">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNN__0USsLA8Za93HYu-KzFRhWF9hF8L2t9qikXiK1rPuAjTW-mT-gNAoUa_ljIwnlhZs&usqp=CAU" alt="">
+      <h2 class="card-text fw-bold mt-4">Your Wishlist is empty!.</h2>
+      <a href="#" routerLink="/user/items"  class="btn btn-primary mb-4">Shop now</a>
+    </div>
+   
+  </div>
+</ng-container>

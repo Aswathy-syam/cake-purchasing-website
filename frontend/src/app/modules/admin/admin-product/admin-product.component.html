@@ -1,0 +1,70 @@
+
+<div class="container-product">
+    <nav routerLink="/admin/dashboard" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div  class="container-fluid ">
+            <i class="fa-solid fa-house fs-5 text-light"></i>
+          <a class="navbar-brand ms-2  fw-bold" href="#">DASHBOARD</a>
+          <a class="navbar-brand ms-3  fw-bold" href="#">CREAMIO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item ">
+                <a class="nav-link active ms-auto border rounded p-1 fw-bold fs-5 " aria-current="page" href="#">Logout</a>
+              </li>
+             
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+     
+    
+      <!--  -->
+      <div class="container mt-5">
+        <h2 class="text-center mb-5 fs-3">Product Information</h2>
+        <div class="d-flex">
+            <form class="d-flex w-25 mb-5">
+                <input class="form-control me-2" type="search" placeholder="Search"  name="searchKey" [(ngModel)]="searchKey">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+    
+              <button  routerLink="/admin/add"  type="button" class="btn btn-warning ms-auto  h-25 ">
+                <i class="fa-sharp fa-regular fa-plus"></i>
+                Add</button>
+        </div>
+           <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product  of allProducts | products:searchKey:'category'">
+                    <td>{{product.Id}}</td>
+                    <td><img [src]="product.image" style="max-width: 100px;"></td>
+                    <td>{{product.productName}}</td>
+                    <td>₹{{product.price}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.description}}</td>
+                    <td>
+                      <i class="fa-solid fa-pen-to-square btn text-success fs-5" routerLink="/admin/edit/{{product._id}}"></i>
+                        <i class="fa-solid fa-trash fs-5 text-danger mt-3 ms-2 ps-1 btn" title="delete" (click)="delete(product._id)"></i>
+                    </td>
+                </tr>
+               
+              
+            </tbody>
+        </table>
+    </div>
+    
+    
+    </div>

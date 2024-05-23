@@ -1,0 +1,14 @@
+@import 'swiper/less';
+@import 'swiper/less/navigation';
+@import 'swiper/less/pagination';
+
+
+
+.card{
+    border-radius: 23px;
+}
+.card-img-top{
+    border-radius: 13px;
+   
+   
+}

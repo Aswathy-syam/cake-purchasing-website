@@ -1,0 +1,78 @@
+<div class="container-fluid">
+<div class="box shadow">
+    <div class="text-center">
+        <i class="fa-solid fa-cake-candles fs-2 text-warning mt-4 mb-3"></i>
+        <h4 class="text-light fw-bold fs-3"><i>CREAMIO</i></h4>
+    </div>
+    
+    <form [formGroup]="loginForm" class="shadow" (ngSubmit)="login()" >
+
+        <h3 class="text-center mb-4  fw-bold fs-4">LogIn</h3>
+
+        <!-- email -->
+        <div class="mb-4">
+          <input type="email" class="form-control" 
+          placeholder="enter your email" formControlName="email">
+
+<!-- error div email -->
+<div *ngIf="this.loginForm.get('email')?.errors && this.loginForm.get('email')?.touched" class="text-danger fw-bold mt-1">Invalid email</div>
+
+        </div>
+
+
+<!-- password -->
+        <div class="mb-2">
+          <input type="password" class="form-control"
+          placeholder="enter your password" formControlName="password">
+
+           <!-- error div password -->
+        <div *ngIf="this.loginForm.get('password')?.errors && this.loginForm.get('password')?.touched" class="text-danger fw-bold mt-1">Invalid Password</div>
+        </div>
+       
+
+        <div class=" mt-2">
+          <a  routerLink="/user/forgot" style="text-decoration: none;">forgot password?</a>
+        </div>
+        
+        <!-- login button -->
+
+        <div class=" d-flex align-items-center justify-content-center">
+        <button type="submit" class="btn btn-warning rounded mt-3 w-50">Login</button>
+       
+    </div>
+    
+  <!-- signing with google -->
+   <div class="  mt-4 d-flex align-items-center justify-content-center">
+  <!-- Bootstrap button with Google colors -->
+  <button class="btn border ">
+    <!-- Inline SVG representation of Google icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="24px" height="24px">
+      <path fill="#EA4335" d="M43.23,21.49H24v6.93h12.35c-0.52,2.71-2.61,7.95-12.35,7.95c-7.47,0-13.57-6.37-13.57-13.57 s6.1-13.57,13.57-13.57c4.3,0,7.17,1.84,8.78,3.54l6.02-6.02C34.06,2.77,29.55,0,23.73,0C10.64,0,0,10.64,0,23.73 S10.64,47.47,23.73,47.47S48,36.83,48,23.73c0-1.28-0.14-2.52-0.32-3.74C46.56,25.2,45.04,23.95,43.23,21.49z"/>
+      <path fill="#4285F4" d="M6.1,29.67C5.37,27.94,5,26.03,5,24c0-1.99,0.37-3.89,1.07-5.67L0.54,11.89 C0.2,13.67,0,15.81,0,18c0,9.94,6.41,18.34,15.33,21.33c3.33-2.83,5.92-6.39,7.4-10.67H15.29V29.67H6.1z"/>
+      <path fill="#FBBC05" d="M24,5.08c3.82,0,7.27,1.31,10.02,3.88l7.52-7.52C34.05,0.68,29.32,0,24,0C15.08,0,6.66,5.8,2.71,14.17 c3.24,5.16,8.14,8.7,14.29,9.13c1.11,0.13,2.25,0.19,3.4,0.19c5.64,0,10.72-2.45,14.25-6.32l-6.89-5.32 C29.33,5.62,26.83,5.08,24,5.08z"/>
+      <path fill="#34A853" d="M6.71,14.31l14.99,11.59c0.44-1.32,1.03-2.57,1.76-3.71l-7.53-5.83C10.25,12.11,8.41,13.27,6.71,14.31z"/>
+    </svg>
+    Sign in with Google
+  </button>
+</div>
+
+
+
+
+
+    <h6 class="mt-4 text-center fs-6">new user?<a  style="color: blue;" routerLink="/user/register">Click Here</a></h6>
+      </form>
+
+
+    </div>
+
+
+    
+
+
+</div>
+
+
+
+
+

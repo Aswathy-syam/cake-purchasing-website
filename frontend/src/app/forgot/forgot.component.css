@@ -1,0 +1,21 @@
+.container-fluid{
+    background-color: antiquewhite;
+height: 100vh;
+/* display: flex;
+align-items: center;
+justify-content: center; */
+position: relative;
+
+}
+.box{
+    position: absolute;
+    height: 300px;
+    width: 320px;
+    background-color: white;
+    /* margin: auto; */
+    margin-top: 5%;
+    margin-left: 35%;
+    
+    
+   
+}

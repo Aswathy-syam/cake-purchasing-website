@@ -1,0 +1,129 @@
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="p-5" style="background-color: rgb(233, 233, 241);" >Menu</mat-toolbar>
+    <mat-nav-list class="h-100" style="background-color: rgb(233, 233, 241);">
+      <a mat-list-item  class="mt-3 border rounded text-center" (click)="filter('')">Products</a>
+      <a mat-list-item  class="mt-3 border rounded text-center" (click)="filter('Cake')">Cakes</a>
+      <a  mat-list-item  class="mt-3 border rounded text-center" (click)="filter('Muffins')">Muffins</a>
+      <a mat-list-item  class="mt-3 border rounded text-center" (click)="filter('Donut')">Donuts</a>
+      <a mat-list-item  class="mt-3 border rounded text-center" (click)="filter('Brownie')" >Brwonies</a>
+      
+
+      
+
+     
+      
+     
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+
+
+  <mat-sidenav-content>
+    <mat-toolbar class=" text-dark" style="background-color: rgb(233, 233, 241);">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon" class="bg-light text-dark ">menu</mat-icon>
+      </button>
+      <div class="m-auto ">
+        <span class="fs-6 btn" routerLink="">Home</span>
+        <span class="fs-6 btn">About</span>
+        <span class="fw-bold fw-3 fs-4 btn" routerLink="/user/main">CERAMIO</span>
+        <span class="fs-6 btn">Premises</span>
+        <span class="fs-6 btn" routerLink="/user/footer">Contacts</span>
+    </div>
+    <ul class="navbar-nav  fs-5 ">
+      <li class="nav-item ">
+        <a routerLink="/user/login" class="text-dark me-2 fs-5"><i class="fa-solid fa-user">LogOut</i></a>
+        <button  style="border: none;">
+        <i class="fa-regular fa-heart fs-5" routerLink="/user/wish"></i>
+        <div style="font-size: 10px;" class="badge bg-danger" >{{wishItem}}</div>
+      </button>
+        <button  routerLink="/user/card" style="border: none;">
+          <i class="fa-solid fa-cart-shopping fs-5" ></i>
+          <div style="font-size: 10px;" class="badge bg-danger" >{{totalItem}}</div>
+        </button>
+      </li>
+    </ul>
+  
+    </mat-toolbar>
+    <app-itemsnav></app-itemsnav>
+
+
+
+<!-- items card -->
+<div class="container mt-5">
+  <div class="row g-5">
+      
+    <div class="col"  *ngFor="let product of filterCategory | pipe:searchKey:'productName'">
+      <div class="card p-2 btn"  style="width: 18rem; height: 400px;"  >
+
+
+
+        <div class="wrapper">
+          <div class="image">
+        <img 
+          [src]="product.image"
+          class="img card-img-top"style="height: 230px;"
+          alt="..."  />
+
+          <div class="icons">
+  <i class="fa-solid fa-heart" (click)="addToWishlist(product)"></i>
+          </div>
+        </div>
+        </div>
+        
+
+
+
+        <div class="card-body">
+          <p class="card-text"  routerLink="/user/view/{{product._id}}">{{product.productName}}</p>
+          <div class="d-flex text">
+            <h2 class="fw-bold">₹{{product.price}}</h2>
+            
+            <div
+              class="d-flex rounded ps-1"
+              style="
+                width: 50px;
+                height: 25px;
+                background-color: rgb(5, 138, 5);">
+            
+              <h3 class="text-light fs-6">4.4</h3>
+              
+              <i class="fa-regular fa-star py-1 ms-1 fs-7 text-light"></i>
+            </div>
+          
+          </div>
+        
+          <button type="button" class="btn btn-outline-warning w-75" (click)="addtocart(product)">Add to cart </button>
+        </div>
+        
+      </div>
+    
+    </div> 
+
+  
+  </div>
+</div>
+<!--  -->
+
+
+
+
+
+
+
+
+  
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

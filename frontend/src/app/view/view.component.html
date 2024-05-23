@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+
+<div class="mt-5 py-3 ">
+  <i routerLink="/user/items" class="fa-solid fa-arrow-left fs-1 ms-5 ps-5 btn" ></i>
+
+<div class="card mb-3 ms-auto me-auto shadow" style="max-width: 800px; margin-top:2%;">
+
+    <div class="row g-0" *ngIf="products">
+      <div class="col-md-4">
+        <img [src]="products.image" class="img-fluid rounded-start p-4" alt="..." style="height:65vh;">
+      </div>
+      <div class="col-md-8 ps-3">
+        <div class="card-body">
+          <h5 class="card-title fw-bold fs-3 mt-3">{{products.productName}}</h5>
+          <p class=" fs-5 mt-4">₹{{products.price}}</p>
+          <h5 class="card-text fw-bold fs-5 mt-4">Product Description</h5>
+          <p class="card-text mt-3">{{products.description}}</p>
+<div class="d-flex mt-4">
+          <select class="form-select w-25" >
+            <option selected>1kg</option>
+            <option value="1">.5kg</option>
+            <option value="2">2kg</option>
+          </select>
+
+          <!-- <select class="form-select w-25 ms-5" >
+            <option selected>3 set</option>
+            <option value="1">6 set</option>
+            <option value="2">12 set</option>
+          </select> -->
+
+        </div>
+          <button type="button" class="btn btn-primary w-25 mt-5 mb-5" (click)="addtocart(products)">Add to cart</button>
+          <button type="button" class="btn btn-outline-success w-50 ms-5 mt-5 mb-5">Buy now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ---------------- -->
+
+<hr style="margin-top: 5%;">
+
+<div>
+  <div class="mt-5 ms-5 ps-5">
+<h1 >About us</h1>
+
+      <p class="me-5 pe-5 mt-3" style="line-height: 26px;">Creamio was established in September 2012 and is now one of the most popular Confectionery in Cochin.
+        Equipments being used are best and the Latest technology in the field of Bakery and Confectionery. Creamio serves you with a wide variety of cakes, comes in all shapes
+        and flavours. We offer cakes for various occasions,decorated the way you want it. At Cake Hut, we use quality ingredients and have expertised cheffs. You will find the difference in every bite. We have created multiple relationships in a short time, with thousands of happy customers. We ensure all your celebrations begins here!</p>
+      </div>
+
+      <div style="background-color: rgb(233, 230, 230);">
+      <div class="container mt-5 py-5" >
+        <div class="row">
+          <div class="col fs-6 fw-bold">
+            100% Safe & Secure Payments
+            All Major Credit & Debit Cards Accepted
+            
+          </div>
+          <div class="col fs-6 fw-bold">
+            700+ Cities
+            Happily Delivering
+          </div>
+          <div class="col fs-6 fw-bold">
+            100% Fresh & Hygienic
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<app-foot></app-foot>
